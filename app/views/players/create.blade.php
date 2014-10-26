@@ -1,8 +1,8 @@
 @extends('layouts/players')
 
 @section('main')
-<div style="margin-left:150px;">
-<h1 style="color:green">Add Player</h1>
+<div class="playerposition">
+<h1 class="playerheading">Add Player</h1>
 
 {{ Form::open(array('route' => 'players.store')) }}
     <ul>
@@ -32,6 +32,7 @@
         </li>
 				<li>
             {{ Form::submit('Submit', array('class' => 'btn btn-success')) }}
+						{{ link_to_route('players.edit', 'Cancel', '0', array('class' => 'btn btn-info')) }}
         </li>
     </ul>
 {{ Form::close() }}

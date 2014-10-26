@@ -1,7 +1,7 @@
 @extends('layouts/players')
 @section('main')
-<div style="margin-left:150px;">
-<h1 style="color:green;">Edit Player</h1>
+<div class="playerposition">
+<h1 class="playerheading">Edit Player</h1>
 {{ Form::model($player, array('method' => 'PATCH', 'route' =>
  array('players.update', $player->player_id))) }}
     <ul>
@@ -31,7 +31,7 @@
         </li>
         <li>
 						{{ Form::submit('Update', array('class' => 'btn btn-success')) }}
-            {{ link_to_route('players.index', 'Cancel', $player->id, array('class' => 'btn')) }}
+            {{ link_to_route('players.index', 'Cancel', $player->id, array('class' => 'btn btn-info')) }}
         </li>
     </ul>
 {{ Form::close() }}
@@ -41,3 +41,4 @@
         {{ implode('', $errors->all('<li class="error">:message</li>')) }}
     </ul>
 @endif
+@stop
